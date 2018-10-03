@@ -770,7 +770,9 @@ Ext.apply(Voyant.widget.StopListOption.i18n, {
 "fa":"Farsi",
 "ro":"Romanian",
 "nl":"Dutch",
-"tr":"Turkish"});
+"tr":"Turkish",
+"da":"Danish",
+"da_gammel":"Danish (Old)"});
 Ext.apply(Voyant.panel.Catalogue.i18n, {
 "sendToVoyantButton":"New Voyant Corpus",
 "cancel":"Cancel",

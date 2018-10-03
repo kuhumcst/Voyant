@@ -884,6 +884,8 @@ September 21	Voyant.panel.Trends	failedGetDocumentTerms	Failed to get document t
 2016-04-25	Voyant.widget.StopListOption	ckb	Kurdish	Kurde	Curdo	Kurdo 	Curdo				kurdski	курдски	kurdski	クルド語	כורדית	kurdština	كردي	
 2016-04-25	Voyant.widget.StopListOption	cn	Chinese	Chinois	Cinese	Chino 	Chinês				kineski	кинески	kineski	中国語	סינית	čínština	صيني	
 2016-04-25	Voyant.widget.StopListOption	cz	Czech	Tchèque	Ceco	Checo	Checo				češki	чешки	češki	チェコ語	צ'כית	čeština	تشيكي	
+2017-08-09	Voyant.widget.StopListOption	da	Danish
+2017-10-26	Voyant.widget.StopListOption	da_gammel	Danish (Old)
 2016-04-25	Voyant.widget.StopListOption	de	German	Allemand	Tedesco	Alemán 	Alemão				njemački	немачки	njemački	ドイツ語	גרמנית	němčina	الماني	
 2016-04-25	Voyant.widget.StopListOption	editList	Edit List	Modifier la liste	Modifica la lista	Editar lista	Editar a lista				Revizija liste	Pевизија листе	Revizija liste	リストの編集	עריכת רשימה	Editace seznamu	تحرير القائمة 	
 2016-04-25	Voyant.widget.StopListOption	editStopListMessage	This is the stoplist, one term per line.	Liste des mots vides, un terme par ligne	Questa è la stoplist, una parola per riga	Esta es la lista de palabras excluidas, cada término en una línea. 	Lista de palavras excluídas (stoplist), um termo por linha.				Ovo je lista praznih riječi. Jedan termin, jedan red.	Ово је листа празних речи. Један термин, један ред.	Ovo je lista praznih riječi. Jedan termin, jedan red.	これはストップワードリストです。単語ごとに改行してください	זו רשימת מילות העצירה, ביטוי בכל שורה	Toto je seznam stop slov s jedním termínem na řádek.	الرجاء إدخال كلمة واحدة على كل سطر	

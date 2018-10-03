@@ -92,14 +92,25 @@ Ext.define('Voyant.panel.CorpusCreator', {
 	    				        submitEmptyText: false,
 	    				        margin: '5,5,5,5',
 	    				        items: {
-	    				        	xtype: 'corpusselector'
-//	    				            xtype:'combo',
-//	    				            labelWidth: 150,
-//	    				            fieldLabel:'Choose a corpus:',
-//	    				            name:'corpus',
-//	    				            queryMode:'local',
-//	    				            store:[['shakespeare',"Shakespeare's Plays"],['austen',"Austen's Novels"]],				            
-//	    				            forceSelection:true
+	    				        	xtype: 'corpusselector',
+	    				            	forceSelection:true,
+										displayTpl: new Ext.XTemplate(
+														'<tpl for=".">',
+														'{[this.decodeEntities(values.name)]}',
+														'</tpl>',
+														{
+															disableFormats: true,
+															decodeEntities: function(str) {
+																var element = document.createElement("div");
+																if(str && typeof str === 'string') {
+																	element.innerHTML = str;
+																	return element.firstChild.nodeValue;
+																}
+
+																return str;
+															}
+														}
+										)
 	    				        },
 	    				        buttons: [
 	    				        	{
@@ -259,33 +270,33 @@ Ext.define('Voyant.panel.CorpusCreator', {
         me.on("boxready", function(panel) {
         	var app = this.getApplication();
         	if (app.getAllowInput && app.getAllowInput()=="false") {
-        		if (app.getNoAllowInputText && app.getNoAllowInputText().trim().length>0) {
-        			Ext.defer(function() {
-            			var parent = panel.up("container");
-            			parent.removeAll(); // input box and copyright message
-            			parent.add({
-            	    		frame: false,
-            	    		padding: 10,
-            	    		style: {
-            	    		    borderColor: '#aaa',
-            	    		    borderStyle: 'solid'
-            	    		},
-            				html: app.getNoAllowInputText()
-            			})
-        			}, 100);
-        		} else {
-            		panel.hide();
-            		Ext.create('Ext.window.Window', {
-            		    layout: 'fit',
-            		    header: false,
-            		    modal: true,
-            		    bodyPadding: 10,
-            		    items: {  // Let's put an empty grid in just to illustrate fit layout
-            		        html: "<p style='color: red;'>"+panel.localize('noAllowInputMessage')+"</p>"
-            		    }
-            		}).show();
-        		}
-        	}
+				if (app.getNoAllowInputText && app.getNoAllowInputText().trim().length>0) {
+					Ext.defer(function() {
+						var parent = panel.up("container");
+						parent.removeAll(); // input box and copyright message
+						parent.add({
+							frame: false,
+							padding: 10,
+							style: {
+								borderColor: '#aaa',
+								borderStyle: 'solid'
+							},
+							html: app.getNoAllowInputText()
+						})
+					}, 100);
+				} else {
+					panel.hide();
+					Ext.create('Ext.window.Window', {
+						layout: 'fit',
+						header: false,
+						modal: true,
+						bodyPadding: 10,
+						items: {  // Let's put an empty grid in just to illustrate fit layout
+							html: "<p style='color: red;'>"+panel.localize('noAllowInputMessage')+"</p>"
+						}
+					}).show();
+				}
+			}
         })
 
         me.callParent(arguments);
@@ -456,7 +467,7 @@ Ext.define('Voyant.panel.CorpusCreator', {
 									name: 'xmlGroupByXpath'
 								}
 							]
-						},,{
+						},{
 	        				xtype: 'fieldset',
 	                        title: "<a href='"+me.getBaseUrl()+"docs/#!/guide/corpuscreator-section-html' target='voyantdocs'>"+me.localize('htmlOptions')+"</a>",
 	                        collapsible: true,
@@ -535,13 +546,13 @@ Ext.define('Voyant.panel.CorpusCreator', {
 							]
 						},{
 	        				xtype: 'fieldset',
-	                        title: "<a href='"+me.getBaseUrl()+"docs/#!/guide/corpuscreator-section-processing' target='voyantdocs'>"+me.localize('processingOptions')+"</a>",
+	                        title: "<a href='https://voyant-tools.org/docs/#!/guide/corpuscreator-section-tokenization' target='voyantdocs'>"+me.localize('tokenizationOptions')+"</a>",
 	                        collapsible: true,
 	                        collapsed: true,
 	                        items: [
 								{
-								    xtype:'combo',
-								    fieldLabel: me.localize("language"),
+									xtype:'combo',
+									fieldLabel: me.localize("language"),
 								    name: 'language',
 								    queryMode:'local', //?
 								    store:[['',me._localizeClass(Voyant.widget.StopListOption, "auto")],['cn',me._localizeClass(Voyant.widget.StopListOption, "cn")],['bo',me._localizeClass(Voyant.widget.StopListOption, "bo")],['grc',me._localizeClass(Voyant.widget.StopListOption, "grc")]],
