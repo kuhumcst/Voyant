@@ -100,6 +100,7 @@ app/widget/ProgressMonitor.js
 app/widget/VoyantTableTransform.js
 app/widget/CategoriesBuilder.js
 app/widget/VoyantNetworkGraph.js
+app/widget/ReaderGraph.js
 
 
 # PANELS
@@ -125,10 +126,12 @@ app/panel/DocumentTerms.js
 app/panel/Documents.js
 app/panel/DocumentsFinder.js
 app/panel/Dummy.js
+app/panel/Fountain.js
 app/panel/RezoViz.js
 app/panel/Loom.js
 app/panel/MicroSearch.js
 app/panel/Mandala.js
+app/panel/MicroOcp.js
 app/panel/Reader.js
 app/panel/SimpleDocReader.js
 app/panel/ScatterPlot.js

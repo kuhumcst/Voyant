@@ -12,7 +12,7 @@
 	
 	<context-param>
 		<param-name>build</param-name>
-		<param-value>M11</param-value>
+		<param-value>M16</param-value>
 	</context-param>
 	
 	<servlet>
@@ -28,6 +28,15 @@
 	<servlet>
 		<servlet-name>catalogue</servlet-name>
 		<jsp-file>/catalogue/index.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>microocp</servlet-name>
+		<url-pattern>/microocp/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>microocp</servlet-name>
+		<jsp-file>/microocp/index.jsp</jsp-file>
 	</servlet>
 	
 	<servlet-mapping>
